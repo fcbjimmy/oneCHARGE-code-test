@@ -1,7 +1,18 @@
-// Question 3.
-// There are two sorted arrays nums1 and nums2 of size m and n respectively.
-// Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
-// You may assume nums1 and nums2 cannot be both empty.
-
-//I am going to be honest, I did not understand this question much
-//had to go through stackoverflow
+function findMedianSortedArrays(nums1, nums2) {
+    var sortedArray = nums1.concat(nums2);
+    sortedArray.sort(function (a, b) { return a - b; });
+    console.log(sortedArray);
+    //[1,2,3,4]
+    var middle = sortedArray.length / 2;
+    var beforeMiddle = middle - 1;
+    //if its even
+    if (sortedArray.length % 2 === 0) {
+        return (sortedArray[middle] + sortedArray[beforeMiddle]) / 2;
+    }
+    else {
+        //if its odd
+        middle = Math.floor(middle);
+        return sortedArray[middle];
+    }
+}
+console.log(findMedianSortedArrays([3], [-2, -1]));
