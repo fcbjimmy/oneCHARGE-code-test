@@ -8,7 +8,7 @@
 //Get the middle index
 //Get the middle index - 1 for the case length is even
 //If condition to return middle number if length is even or odd
-//Return the midian
+//Return the median
 
 function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   const sortedArray: number[] = nums1.concat(nums2);
